@@ -1,5 +1,5 @@
 {
-    "name": "riotphp/riotphp",
+    "name": "phpbillionaire/riotphp",
     "description": "Riot Games Api PHP Wrapper",
     "type": "library",
     "autoload": {
