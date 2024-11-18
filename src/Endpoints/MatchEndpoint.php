@@ -1,9 +1,7 @@
 <?php
-
 namespace App\Endpoints;
 use App\Interfaces\{ApiHandlerInterface, MatchEndpointInterface};
-
-class MatchEndpoint implements MatchEndpointInterface
+final class MatchEndpoint implements MatchEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;
     public function __construct(ApiHandlerInterface $apiHandler)

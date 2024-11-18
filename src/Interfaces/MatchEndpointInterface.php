@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Interfaces;
-
 interface MatchEndpointInterface
 {
     public function getMatchById(string $matchId): array;

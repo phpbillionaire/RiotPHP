@@ -1,8 +1,6 @@
 <?php
-
 namespace App\Endpoints;
 use App\Interfaces\{AccountEndpointInterface, ApiHandlerInterface};
-
 final class AccountEndpoint implements AccountEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;

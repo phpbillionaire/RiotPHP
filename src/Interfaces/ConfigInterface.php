@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Interfaces;
 interface ConfigInterface
 {

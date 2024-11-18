@@ -1,9 +1,7 @@
 <?php
-
 namespace App\Api;
-
 use GuzzleHttp\{Client, ClientInterface};
-use src\Interfaces\{ApiHandlerInterface, ConfigInterface};
+use App\Interfaces\{ApiHandlerInterface, ConfigInterface};
 final class ApiHandler implements ApiHandlerInterface
 {
     private ConfigInterface $config;
