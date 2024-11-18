@@ -1,8 +1,7 @@
 <?php
 
-namespace src\Endpoints;
-use src\Interfaces\ApiHandlerInterface;
-use src\Interfaces\MatchEndpointInterface;
+namespace App\Endpoints;
+use App\Interfaces\{ApiHandlerInterface, MatchEndpointInterface};
 
 class MatchEndpoint implements MatchEndpointInterface
 {

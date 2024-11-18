@@ -1,8 +1,8 @@
 <?php
 
-namespace src\Config;
+namespace App\Config;
 
-use src\Interfaces\ConfigInterface;
+use App\Interfaces\ConfigInterface;
 use Dotenv\Dotenv;
 
 final class Config implements ConfigInterface

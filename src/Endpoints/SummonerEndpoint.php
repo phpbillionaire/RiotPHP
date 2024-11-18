@@ -1,7 +1,7 @@
 <?php
 
-namespace src\Endpoints;
-use src\Interfaces\ApiHandlerInterface;
+namespace App\Endpoints;
+use App\Interfaces\ApiHandlerInterface;
 class SummonerEndpoint
 {
     private ApiHandlerInterface $apiHandler;

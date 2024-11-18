@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Interfaces;
+namespace App\Interfaces;
 interface SummonerEndpointInterface
 {
     public function getData(string $puuid): array;

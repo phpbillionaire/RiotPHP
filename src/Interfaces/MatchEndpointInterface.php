@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Interfaces;
+namespace App\Interfaces;
 
 interface MatchEndpointInterface
 {
