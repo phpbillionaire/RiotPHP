@@ -1,6 +1,6 @@
 {
-    "name": "mal-php-hite/mal-php-hite",
-    "description": "A rock-solid php library for the league of legends API.",
+    "name": "riotphp/riotphp",
+    "description": "Riot Games Api PHP Wrapper",
     "type": "library",
     "autoload": {
         "psr-4": {
@@ -9,7 +9,7 @@
     },
     "authors": [
         {
-            "name": "malPHPhite",
+            "name": "phpbillionaire",
             "email": "nothing@gmail.com"
         }
     ],
