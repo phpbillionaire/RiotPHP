@@ -1,0 +1,20 @@
+{
+    "name": "mal-php-hite/mal-php-hite",
+    "description": "A rock-solid php library for the league of legends API.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "malPHPhite",
+            "email": "nothing@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.9",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
