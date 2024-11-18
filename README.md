@@ -18,8 +18,8 @@ Add **autoload.php** and needed classes.
 ```php
 require_once __DIR__ . "/vendor/autoload.php";
 
-use src\Api\ApiHandler;
-use src\config\Config;
+use App\Api\ApiHandler;
+use App\config\Config;
 use GuzzleHttp\Client;
 ```
 Initiliaze Guzzle Http Client
