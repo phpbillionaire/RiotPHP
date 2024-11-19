@@ -21,7 +21,7 @@ final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
     {
         return $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/champion-masteries/by-puuid/{$puuid}/top");
     }
-    public function getMasteryScores(string $puuid): array
+    public function getMasteryScores(string $puuid): int
     {
         return $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/scores/by-puuid/{$puuid}");
     }
