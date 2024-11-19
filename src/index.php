@@ -17,6 +17,8 @@ $championMasteryEndpoint = new ChampionMasteryEndpoint($naApi);
 
 $accountEndpoint = new AccountEndpoint($americasApi);
 
-$puuid = $accountEndpoint->getPuuid(name: "Kurfyou", tag: "NA3");
+$puuid = $accountEndpoint->getPuuid(name: "Doublelift", tag: "NA1");
 
-$championMasteryEndpoint->getMasteriesByPuuid($puuid);
+//print_r($puuid);
+$masteries = $championMasteryEndpoint->getMasteriesByPuuid($puuid);
+print_r($masteries);
