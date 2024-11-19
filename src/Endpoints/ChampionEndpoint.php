@@ -1,8 +1,7 @@
 <?php
 namespace App\Endpoints;
-use App\Interfaces\ApiHandlerInterface;
-use App\Interfaces\ChampionEndpointInterface;
-class ChampionEndpoint implements ChampionEndpointInterface
+use App\Interfaces\{ApiHandlerInterface, ChampionEndpointInterface};
+final class ChampionEndpoint implements ChampionEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;
     public function __construct(ApiHandlerInterface $apiHandler)

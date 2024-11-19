@@ -1,7 +1,8 @@
 <?php
 namespace App\Endpoints;
-use App\Interfaces\ApiHandlerInterface;
-final class SummonerEndpoint
+use App\Interfaces\{ApiHandlerInterface, SummonerEndpointInterface};
+
+final class SummonerEndpoint implements SummonerEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;
     public function __construct(ApiHandlerInterface $apiHandler)

@@ -1,8 +1,8 @@
 <?php
 namespace App\Endpoints;
-use App\Interfaces\ApiHandlerInterface;
+use App\Interfaces\{ApiHandlerInterface, ChampionMasteryEndpointInterface};
 
-class ChampionMasteryEndpoint
+final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;
     public function __construct(ApiHandlerInterface $apiHandler)
@@ -21,7 +21,7 @@ class ChampionMasteryEndpoint
     {
         return $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/champion-masteries/by-puuid/{$puuid}/top");
     }
-    public function getMasteryScores(string $puuid): int
+    public function getMasteryScores(string $puuid): array
     {
         return $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/scores/by-puuid/{$puuid}");
     }
