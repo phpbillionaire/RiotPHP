@@ -1,6 +1,6 @@
 # RiotPHP
 
-Riot Games Api PHP Wrapper
+Riot Games Api PHP 8.3.3 Wrapper
 
 ## First Steps
 
