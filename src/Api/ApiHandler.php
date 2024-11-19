@@ -15,7 +15,7 @@ final class ApiHandler implements ApiHandlerInterface
             "verify" => false,
         ]);
     }
-    public function request(string $endpoint, array $params = []): array
+    public function request(string $endpoint, array $params = []): array|int
     {
         try {
             $response = $this->httpClient->request('GET', $endpoint, [
