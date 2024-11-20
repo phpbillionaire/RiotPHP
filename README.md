@@ -1,4 +1,4 @@
-# RiotPHP
+# RiotGamesPHP
 
 Riot Games Api PHP 8.3.3 Wrapper
 
