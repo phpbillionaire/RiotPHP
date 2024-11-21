@@ -13,4 +13,8 @@ final class AccountEndpoint implements AccountEndpointInterface
         $response = $this->apiHandler->request(endpoint: "/riot/account/v1/accounts/by-riot-id/{$name}/{$tag}");
         return $response["puuid"];
     }
+    public function getData(string $name, string $tag): array
+    {
+        return $this->apiHandler->request(endpoint: "/riot/account/v1/accounts/by-riot-id/{$name}/{$tag}");
+    }
 }
