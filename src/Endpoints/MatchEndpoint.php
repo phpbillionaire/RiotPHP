@@ -16,4 +16,8 @@ final class MatchEndpoint implements MatchEndpointInterface
     {
         return $this->apiHandler->request(endpoint: "/lol/match/v5/matches/by-puuid/{$puuid}/ids");
     }
+    public function getMatchTimelineById(string $matchId): array
+    {
+        return $this->apiHandler->request(endpoint: "/lol/match/v5/matches/{$matchId}/timeline");
+    }
 }
