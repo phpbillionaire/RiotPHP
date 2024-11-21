@@ -45,6 +45,11 @@ Example of usage
 $puuid = $americasAccount->getPuuid(name: "Kenvi", tag: "NA1");
 ```
 
-## Attention
-This library is not finished yet.
-
+## Endpoints List
+ACCOUNT-V1
+CHAMPION-MASTERY-V4
+CHAMPION-V3
+CLASH-V1
+LEAGUE-EXP-V4
+LEAGUE-V4
+LOL-CHALLENGES-V1
