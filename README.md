@@ -53,3 +53,9 @@ $puuid = $americasAccount->getPuuid(name: "Kenvi", tag: "NA1");
 - LEAGUE-EXP-V4
 - LEAGUE-V4
 - LOL-CHALLENGES-V1
+- LOL-RSO-MATCH-V1
+- LOL-STATUS-V4
+- LOR-MATCH-V1
+- LOR-RANKED-V1
+- LOR-STATUS-V1
+- MATCH-V5
