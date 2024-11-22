@@ -1,7 +1,7 @@
 <?php
 namespace App\Config;
-use App\Interfaces\ConfigInterface;
 use Dotenv\Dotenv;
+
 final class Config implements ConfigInterface
 {
     private string $apiKey;
