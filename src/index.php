@@ -1,10 +1,11 @@
 <?php
 require_once __DIR__ . "/../vendor/autoload.php";
+
 use App\Api\ApiHandler;
 use App\Config\Config;
 use GuzzleHttp\Client;
-use App\Endpoints\{AccountEndpoint, SummonerEndpoint, MatchEndpoint, ChampionMasteryEndpoint};
-
+use App\Endpoints\Account\AccountEndpoint;
+use App\Endpoints\LOL\Summoner\SummonerEndpoint;
 $http = new Client();
 
 $na = new Config(region: "na1");
@@ -13,12 +14,8 @@ $americas = new Config(region: "americas");
 $naApi = new ApiHandler($na, $http);
 $americasApi = new ApiHandler($americas, $http);
 
-$championMasteryEndpoint = new ChampionMasteryEndpoint($naApi);
-
 $accountEndpoint = new AccountEndpoint($americasApi);
-
+$summonerEndpoint = new SummonerEndpoint($naApi);
 $puuid = $accountEndpoint->getPuuid(name: "Doublelift", tag: "NA1");
-
-//print_r($puuid);
-$masteries = $championMasteryEndpoint->getMasteriesByPuuid($puuid);
-print_r($masteries);
+$data = $summonerEndpoint->getData($puuid);
+print_r($data);
