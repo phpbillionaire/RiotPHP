@@ -1,7 +1,7 @@
 <?php
 namespace App\Endpoints\Account;
+use App\Endpoints\Account\AccountDto;
 interface AccountEndpointInterface
 {
-    public function getPuuid(string $name, string $tag): string;
-    public function getData(string $name, string $tag): array;
+    public function getData(string $name, string $tag): AccountDto;
 }
