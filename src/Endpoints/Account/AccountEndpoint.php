@@ -1,7 +1,7 @@
 <?php
 namespace App\Endpoints\Account;
 use App\Api\{ApiHandlerInterface};
-
+use App\Endpoints\Account\AccountDto;
 final class AccountEndpoint implements AccountEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;
@@ -9,13 +9,11 @@ final class AccountEndpoint implements AccountEndpointInterface
     {
         $this->apiHandler = $apiHandler;
     }
-    public function getPuuid(string $name, string $tag): string
+    public function getData(string $name, string $tag): AccountDto
     {
-        $response = $this->apiHandler->request(endpoint: "/riot/account/v1/accounts/by-riot-id/{$name}/{$tag}");
-        return $response["puuid"];
-    }
-    public function getData(string $name, string $tag): array
-    {
-        return $this->apiHandler->request(endpoint: "/riot/account/v1/accounts/by-riot-id/{$name}/{$tag}");
+        $data = $this->apiHandler->request(endpoint: "/riot/account/v1/accounts/by-riot-id/{$name}/{$tag}");
+        return new AccountDto($data["puuid"], $data["gameName"], $data["tagLine"]);
     }
 }
+
+// TODO: Add PHPDOC to rest of the files.. FIRST DO DTO!!!
