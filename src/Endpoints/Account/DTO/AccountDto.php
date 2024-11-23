@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\Account;
+namespace App\Endpoints\Account\DTO;
 final readonly class AccountDto
 {
     private string $puuid;

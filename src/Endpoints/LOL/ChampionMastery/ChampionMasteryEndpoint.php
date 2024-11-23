@@ -1,6 +1,9 @@
 <?php
 namespace App\Endpoints\LOL\ChampionMastery;
 use App\Api\{ApiHandlerInterface};
+use App\Endpoints\LOL\ChampionMastery\DTO\ChampionMasteryDto;
+use App\Endpoints\LOL\ChampionMastery\DTO\NextSeasonMilestonesDto;
+use App\Endpoints\LOL\ChampionMastery\DTO\RewardConfigDto;
 
 final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
 {
@@ -16,18 +19,17 @@ final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
         $masteries = [];
 
         foreach($response as $data){
-
             $rewardConfig = new RewardConfigDto(
-                $data["nextSeasonMilestone"]["rewardConfig"]["rewardValue"] ?? null,
-                $data["nextSeasonMilestone"]["rewardConfig"]["rewardType"] ?? null,
-                $data["nextSeasonMilestone"]["rewardConfig"]["maximumReward"] ?? null,
+                rewardValue: $data["nextSeasonMilestone"]["rewardConfig"]["rewardValue"] ?? null,
+                rewardType: $data["nextSeasonMilestone"]["rewardConfig"]["rewardType"] ?? null,
+                maximumReward: $data["nextSeasonMilestone"]["rewardConfig"]["maximumReward"] ?? null,
             );
 
             $nextSeasonMilestone = new NextSeasonMilestonesDto(
-                $data["nextSeasonMilestone"]["requireGradeCounts"],
-                $data["nextSeasonMilestone"]["rewardMarks"],
-                $data["nextSeasonMilestone"]["bonus"],
-                $rewardConfig,
+                requireGradeCounts: $data["nextSeasonMilestone"]["requireGradeCounts"],
+                rewardMarks: $data["nextSeasonMilestone"]["rewardMarks"],
+                bonus: $data["nextSeasonMilestone"]["bonus"],
+                RewardConfig: $rewardConfig,
             );
 
             $masteries[] = new ChampionMasteryDto(
@@ -46,16 +48,78 @@ final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
                 milestoneGrades: $data["milestoneGrades"] ?? null
             );
         };
-
         return $masteries;
     }
-    public function getMasteryByChampion(string $puuid, string $championId): array
+    public function getMasteryByChampion(string $puuid, string $championId): ChampionMasteryDto
     {
-        return $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/champion-masteries/by-puuid/{$puuid}/by-champion/{$championId}");
+        $response =  $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/champion-masteries/by-puuid/{$puuid}/by-champion/{$championId}");
+
+        $rewardConfig = new RewardConfigDto(
+            rewardValue: $response["nextSeasonMilestone"]["rewardConfig"]["rewardValue"] ?? null,
+            rewardType: $response["nextSeasonMilestone"]["rewardConfig"]["rewardType"] ?? null,
+            maximumReward: $response["nextSeasonMilestone"]["rewardConfig"]["maximumReward"] ?? null,
+        );
+
+        $nextSeasonMilestone = new NextSeasonMilestonesDto(
+            requireGradeCounts: $response["nextSeasonMilestone"]["requireGradeCounts"],
+            rewardMarks: $response["nextSeasonMilestone"]["rewardMarks"],
+            bonus: $response["nextSeasonMilestone"]["bonus"],
+            RewardConfig: $rewardConfig,
+        );
+
+        return new ChampionMasteryDto(
+            puuid: $response["puuid"],
+            championPointsUntilNextLevel: $response["championPointsUntilNextLevel"],
+            chestGranted: $response["chestGranted"] ?? null,
+            championId: $response["championId"],
+            lastPlayTime: $response["lastPlayTime"],
+            championLevel: $response["championLevel"],
+            championPoints: $response["championPoints"],
+            championPointsSinceLastLevel: $response["championPointsSinceLastLevel"],
+            markRequiredForNextLevel: $response["markRequiredForNextLevel"],
+            championSeasonMilestone: $response["championSeasonMilestone"],
+            nextSeasonMilestone: $nextSeasonMilestone,
+            tokensEarned: $response["tokensEarned"],
+            milestoneGrades: $response["milestoneGrades"] ?? null
+        );
     }
     public function getTopMasteries(string $puuid): array
     {
-        return $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/champion-masteries/by-puuid/{$puuid}/top");
+        $response =  $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/champion-masteries/by-puuid/{$puuid}/top");
+
+        $masteries = [];
+
+        foreach($response as $data){
+            $rewardConfig = new RewardConfigDto(
+                rewardValue: $data["nextSeasonMilestone"]["rewardConfig"]["rewardValue"] ?? null,
+                rewardType: $data["nextSeasonMilestone"]["rewardConfig"]["rewardType"] ?? null,
+                maximumReward: $data["nextSeasonMilestone"]["rewardConfig"]["maximumReward"] ?? null,
+            );
+
+            $nextSeasonMilestone = new NextSeasonMilestonesDto(
+                requireGradeCounts: $data["nextSeasonMilestone"]["requireGradeCounts"],
+                rewardMarks: $data["nextSeasonMilestone"]["rewardMarks"],
+                bonus: $data["nextSeasonMilestone"]["bonus"],
+                RewardConfig: $rewardConfig,
+            );
+
+            $masteries[] = new ChampionMasteryDto(
+                puuid: $data["puuid"],
+                championPointsUntilNextLevel: $data["championPointsUntilNextLevel"],
+                chestGranted: $data["chestGranted"] ?? null,
+                championId: $data["championId"],
+                lastPlayTime: $data["lastPlayTime"],
+                championLevel: $data["championLevel"],
+                championPoints: $data["championPoints"],
+                championPointsSinceLastLevel: $data["championPointsSinceLastLevel"],
+                markRequiredForNextLevel: $data["markRequiredForNextLevel"],
+                championSeasonMilestone: $data["championSeasonMilestone"],
+                nextSeasonMilestone: $nextSeasonMilestone,
+                tokensEarned: $data["tokensEarned"],
+                milestoneGrades: $data["milestoneGrades"] ?? null
+            );
+        };
+        return $masteries;
     }
     public function getMasteryScores(string $puuid): int
     {

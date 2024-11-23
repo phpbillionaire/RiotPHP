@@ -1,5 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\ChampionMastery;
+namespace App\Endpoints\LOL\ChampionMastery\DTO;
+
 final readonly class NextSeasonMilestonesDto
 {
     private array $requireGradeCounts;
@@ -14,7 +15,7 @@ final readonly class NextSeasonMilestonesDto
         $this->bonus = $bonus;
         $this->RewardConfig = $RewardConfig;
     }
-    public function getRequireGradeCounts(): object
+    public function getRequireGradeCounts(): array
     {
         return $this->requireGradeCounts;
     }

@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\ChampionMastery;
+namespace App\Endpoints\LOL\ChampionMastery\DTO;
 final readonly class RewardConfigDto
 {
     private ?string $rewardValue;

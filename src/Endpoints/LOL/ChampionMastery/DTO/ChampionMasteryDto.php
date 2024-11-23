@@ -1,5 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\ChampionMastery;
+namespace App\Endpoints\LOL\ChampionMastery\DTO;
+
 final readonly class ChampionMasteryDto
 {
     public function __construct(
