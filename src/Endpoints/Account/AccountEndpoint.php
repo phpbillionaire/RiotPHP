@@ -1,7 +1,8 @@
 <?php
 namespace App\Endpoints\Account;
 use App\Api\{ApiHandlerInterface};
-use App\Endpoints\Account\AccountDto;
+use App\Endpoints\Account\DTO\AccountDto;
+
 final class AccountEndpoint implements AccountEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;
@@ -15,5 +16,3 @@ final class AccountEndpoint implements AccountEndpointInterface
         return new AccountDto($data["puuid"], $data["gameName"], $data["tagLine"]);
     }
 }
-
-// TODO: Add PHPDOC to rest of the files.. FIRST DO DTO!!!
