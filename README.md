@@ -1,61 +1,82 @@
 # RiotGamesPHP
+This is API Wrapper that is based on PHP 8.3.3 for https://developer.riotgames.com/apis
 
-PHP 8.3.3 Wrapper for https://developer.riotgames.com/apis
+##### Important! Steps to do before initializing:
 
-## First Steps
+1. Sign up https://authenticate.riotgames.com/
+2. Now go to https://developer.riotgames.com/ and get your api key.
 
-### 1. Initialize project
+Note: Application's entry point is **src/index.php**
 
-```angular2html
+## Usage
+
+### 1. Add your API key to .env
+
+```dotenv
+API_KEY=XXXX-XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX
+```
+
+### 2. Clone & Initialize the project
+```
+git clone https://github.com/phpbillionaire/RiotGamesPHP.git
+```
+```
 composer install
 ```
-
-### 2. Usage
-
-Applications entry point is **index.php**.
-
-Add **autoload.php** and needed classes.
+Now you're good to go!
+### 3. Make first endpoint call (src/index.php)
+Since most Riot endpoints rely on user's PUUID, we'll get it first!
 ```php
-require_once __DIR__ . "/vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
+// Api Handler that will handle the data from requests
 use App\Api\ApiHandler;
-use App\config\Config;
+// This is config which will be responsible for your desired Region/Route
+use App\Config\Config;
+// HTTP Client by Guzzle that will process requests to endpoints
 use GuzzleHttp\Client;
-```
-Initiliaze Guzzle Http Client
-```php
+// Here's our first endpoint (https://developer.riotgames.com/apis#account-v1)
+use App\Endpoints\Account\AccountEndpoint;
+
+// Initializing HTTP Client, project is based on Dependency Injection.
 $http = new Client();
-```
-Create region
-```php
-$americasRegion = new Config(region: "americas"); 
-// It will add region to your uri "https://{$this->config->getRegion()}.api.riotgames.com/",
-```
-Create Api Handler for your region
-```php
-$americasApi = new ApiHandler(config: $americasRegion, httpClient: $http);
-```
-Now you can pass your Api Handler to Endpoint
 
-```php
-$americasAccount = new AccountEndpoint(apiHandler: $americasApi);
-```
-Example of usage
-```php
-$puuid = $americasAccount->getPuuid(name: "Kenvi", tag: "NA1");
-```
+/**
+* Riot Games have global routes (americas, europe, asia, etc.) and local routes (euw1, na1, eune1, etc.)
+* You can make one route for each, place them in one file and require.
+* To look up when to use global route and when local read their API Documentation for each endpoint.
+* How it looks: https://{$this->config->getRegion()}.api.riotgames.com/
+*/
+$route = new Config(region: "americas");
 
-## Endpoints List
-- ACCOUNT-V1
-- CHAMPION-MASTERY-V4
-- CHAMPION-V3
-- CLASH-V1
-- LEAGUE-EXP-V4
-- LEAGUE-V4
-- LOL-CHALLENGES-V1
-- LOL-RSO-MATCH-V1
-- LOL-STATUS-V4
-- LOR-MATCH-V1
-- LOR-RANKED-V1
-- LOR-STATUS-V1
-- MATCH-V5
+/**
+* Now we're going to create Api that we'll go the job.
+* You can also make api for each route, place it in one file and require.
+*/
+$americasApi = new ApiHandler(config: $route, httpClient: $http);
+
+/**
+* Creating our first endpoint access for ACCOUNT-V1 (https://developer.riotgames.com/apis#account-v1)
+* As a parameter we'll need to pass our Api Handler with the access to required route.
+*/
+$accountEndpoint = new AccountEndpoint(apiHandler: $americasApi);
+
+/**
+* The easiest way to retrieve user's PUUID is to use username + tagline
+* Endpoint: /riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine}
+* Let's make our first variable that will hold user's data.
+* @return AccountDto 
+*/
+$account = $accountEndpoint->getData(name: "Sushee", tag: "NA1");
+
+/**
+* Now we have the data.
+ */
+$puuid = $account->getPuuid();
+$gameName = $account->getGameName();
+$tagLine = $account->getTagLine();
+
+var_dump($puuid, $gameName, $tagLine);
+
+// Same with others endpoints, enjoy!
+```
