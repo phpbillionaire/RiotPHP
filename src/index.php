@@ -6,6 +6,7 @@ use App\Config\Config;
 use GuzzleHttp\Client;
 use App\Endpoints\Account\AccountEndpoint;
 use App\Endpoints\LOL\Summoner\SummonerEndpoint;
+
 $http = new Client();
 
 $na = new Config(region: "na1");
@@ -15,7 +16,9 @@ $naApi = new ApiHandler($na, $http);
 $americasApi = new ApiHandler($americas, $http);
 
 $accountEndpoint = new AccountEndpoint($americasApi);
-$summonerEndpoint = new SummonerEndpoint($naApi);
-$puuid = $accountEndpoint->getPuuid(name: "Doublelift", tag: "NA1");
-$data = $summonerEndpoint->getData($puuid);
-print_r($data);
+
+$champMastery = new \App\Endpoints\LOL\ChampionMastery\ChampionMasteryEndpoint($naApi);
+
+$account = $accountEndpoint->getData("Sushee", "NA1");
+$championMasteries = $champMastery->getTopMasteries($account->getPuuid());
+print_r($championMasteries);
