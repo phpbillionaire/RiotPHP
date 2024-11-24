@@ -1,10 +1,8 @@
 <?php
 namespace App\Endpoints\LOL\ChampionMastery;
 use App\Api\{ApiHandlerInterface};
-use App\Endpoints\LOL\ChampionMastery\DTO\ChampionMasteryDto;
-use App\Endpoints\LOL\ChampionMastery\DTO\NextSeasonMilestonesDto;
-use App\Endpoints\LOL\ChampionMastery\DTO\RewardConfigDto;
-
+use App\Endpoints\LOL\ChampionMastery\DTO\{ChampionMasteryDto, NextSeasonMilestonesDto, RewardConfigDto};
+use App\Endpoints\LOL\ChampionMastery\Collections\ChampionMasteryCollection;
 final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;
@@ -12,11 +10,11 @@ final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
     {
         $this->apiHandler = $apiHandler;
     }
-    public function getMasteriesByPuuid(string $puuid): array
+    public function getMasteriesByPuuid(string $puuid): ChampionMasteryCollection
     {
         $response = $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/champion-masteries/by-puuid/{$puuid}");
 
-        $masteries = [];
+        $masteries = new ChampionMasteryCollection();
 
         foreach($response as $data){
             $rewardConfig = new RewardConfigDto(
@@ -32,7 +30,7 @@ final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
                 RewardConfig: $rewardConfig,
             );
 
-            $masteries[] = new ChampionMasteryDto(
+            $masteries->add(new ChampionMasteryDto(
                 puuid: $data["puuid"],
                 championPointsUntilNextLevel: $data["championPointsUntilNextLevel"],
                 chestGranted: $data["chestGranted"] ?? null,
@@ -46,7 +44,7 @@ final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
                 nextSeasonMilestone: $nextSeasonMilestone,
                 tokensEarned: $data["tokensEarned"],
                 milestoneGrades: $data["milestoneGrades"] ?? null
-            );
+            ));
         };
         return $masteries;
     }
@@ -83,11 +81,11 @@ final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
             milestoneGrades: $response["milestoneGrades"] ?? null
         );
     }
-    public function getTopMasteries(string $puuid): array
+    public function getTopMasteries(string $puuid): ChampionMasteryCollection
     {
         $response =  $this->apiHandler->request(endpoint: "/lol/champion-mastery/v4/champion-masteries/by-puuid/{$puuid}/top");
 
-        $masteries = [];
+        $masteries = new ChampionMasteryCollection();
 
         foreach($response as $data){
             $rewardConfig = new RewardConfigDto(
@@ -103,7 +101,7 @@ final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
                 RewardConfig: $rewardConfig,
             );
 
-            $masteries[] = new ChampionMasteryDto(
+            $masteries->add(new ChampionMasteryDto(
                 puuid: $data["puuid"],
                 championPointsUntilNextLevel: $data["championPointsUntilNextLevel"],
                 chestGranted: $data["chestGranted"] ?? null,
@@ -117,7 +115,7 @@ final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
                 nextSeasonMilestone: $nextSeasonMilestone,
                 tokensEarned: $data["tokensEarned"],
                 milestoneGrades: $data["milestoneGrades"] ?? null
-            );
+            ));
         };
         return $masteries;
     }
