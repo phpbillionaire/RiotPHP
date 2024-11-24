@@ -3,10 +3,10 @@ namespace App\Endpoints\LOL\Clash\DTO;
 final readonly class PlayerDto
 {
     private string $summonerId;
-    private string $teamId;
+    private ?string $teamId;
     private string $position;
     private string $role;
-    public function __construct(string $summonerId, string $teamId, string $position, string $role)
+    public function __construct(string $summonerId, ?string $teamId, string $position, string $role)
     {
         $this->summonerId = $summonerId;
         $this->teamId = $teamId;
