@@ -2,10 +2,7 @@
 namespace App\Endpoints\LOL\Clash;
 use App\Api\{ApiHandlerInterface};
 use App\Endpoints\LOL\Clash\Collections\ClashCollection;
-use App\Endpoints\LOL\Clash\DTO\PlayerDto;
-use App\Endpoints\LOL\Clash\DTO\TeamDto;
-use App\Endpoints\LOL\Clash\DTO\TournamentDto;
-use App\Endpoints\LOL\Clash\DTO\TournamentPhaseDto;
+use App\Endpoints\LOL\Clash\DTO\{PlayerDto, TournamentPhaseDto, TeamDto, TournamentDto};
 
 final class ClashEndpoint implements ClashEndpointInterface
 {
