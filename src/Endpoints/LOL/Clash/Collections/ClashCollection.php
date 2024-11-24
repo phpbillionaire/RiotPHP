@@ -1,8 +1,8 @@
 <?php
 namespace App\Endpoints\LOL\Clash\Collections;
 use App\Collections\BaseCollectionInterface;
-
-final class ClashCollections implements BaseCollectionInterface, \Countable, \IteratorAggregate
+use App\Endpoints\LOL\Clash\DTO\PlayerDto;
+final class ClashCollection implements BaseCollectionInterface, \Countable, \IteratorAggregate
 {
     private array $items = [];
     public function add($dto): void
