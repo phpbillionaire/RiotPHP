@@ -1,12 +1,9 @@
 <?php
-namespace App\Endpoints\LOL\ChampionMastery\Collections;
-use App\Collections\BaseCollectionInterface;
-use App\Endpoints\LOL\ChampionMastery\DTO\ChampionMasteryDto;
-use Countable;
-use IteratorAggregate;
-use Traversable;
+namespace App\Endpoints\LOL\League\Collections;
 
-class ChampionMasteryCollection implements BaseCollectionInterface, Countable, IteratorAggregate
+use App\Collections\BaseCollectionInterface;
+
+class LeagueCollection implements BaseCollectionInterface, \Countable, \IteratorAggregate
 {
     private array $items = [];
     public function add($dto): void
