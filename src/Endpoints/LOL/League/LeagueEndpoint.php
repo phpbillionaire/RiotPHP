@@ -1,8 +1,11 @@
 <?php
 namespace App\Endpoints\LOL\League;
-
 use App\Api\ApiHandlerInterface;
-
+use App\Endpoints\LOL\League\DTO\LeagueEntryDto;
+use App\Endpoints\LOL\League\DTO\LeagueItemDTO;
+use App\Endpoints\LOL\League\DTO\LeagueListDto;
+use App\Endpoints\LOL\LeagueExp\DTO\MiniSiriesDto;
+use App\Endpoints\LOL\League\Collections\LeagueCollection;
 final class LeagueEndpoint implements LeagueEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;
@@ -10,28 +13,194 @@ final class LeagueEndpoint implements LeagueEndpointInterface
     {
         $this->apiHandler = $apiHandler;
     }
-    public function getChallengerLeagueByQueue(string $queue): array
+    public function getChallengerLeagueByQueue(string $queue): LeagueListDto
     {
-        return $this->apiHandler->request(endpoint: "/lol/league/v4/challengerleagues/by-queue/{$queue}");
+        $response = $this->apiHandler->request(endpoint: "/lol/league/v4/challengerleagues/by-queue/{$queue}");
+
+        $miniSiries = new MiniSiriesDto(
+            $response["entries"]["miniSiries"]["losses"],
+            $response["entries"]["miniSiries"]["progress"],
+            $response["entries"]["miniSiries"]["target"],
+            $response["entries"]["miniSiries"]["wins"]
+        );
+
+        $entries = new LeagueItemDTO(
+            $response["entries"]["freshBlood"],
+            $response["entries"]["wins"],
+            $miniSiries,
+            $response["entries"]["inactive"],
+            $response["entries"]["veteran"],
+            $response["entries"]["hotStreak"],
+            $response["entries"]["rank"],
+            $response["entries"]["leaguePoints"],
+            $response["entries"]["losses"],
+            $response["entries"]["summonerId"],
+        );
+
+        return new LeagueListDto(
+            $response["leagueId"],
+            $entries,
+            $response["tier"],
+            $response["name"],
+            $response["queue"],
+        );
     }
-    public function getLeagueEntriesByEncryptedSummonerId(string $encryptedSummonerId): array
+    public function getLeagueEntriesByEncryptedSummonerId(string $encryptedSummonerId): LeagueCollection
     {
-        return $this->apiHandler->request(endpoint: "/lol/league/v4/entries/by-summoner/{$encryptedSummonerId}");
+        $response = $this->apiHandler->request(endpoint: "/lol/league/v4/entries/by-summoner/{$encryptedSummonerId}");
+
+        $leagueCollection = new LeagueCollection();
+
+        foreach ($response as $data){
+            $miniSiries = new MiniSiriesDto(
+                $data["miniSiries"]["losses"],
+                $data["miniSiries"]["progress"],
+                $data["miniSiries"]["target"],
+                $data["miniSiries"]["wins"],
+            );
+
+            $leagueCollection->add(new LeagueEntryDto(
+                $data["leagueId"],
+                $data["summonerId"],
+                $data["queueType"],
+                $data["tier"],
+                $data["rank"],
+                $data["leaguePoints"],
+                $data["wins"],
+                $data["losses"],
+                $data["hotStreak"],
+                $data["veteran"],
+                $data["freshBlood"],
+                $data["inactive"],
+                $miniSiries,
+            ));
+        }
+        return $leagueCollection;
     }
-    public function getAllLeagueEntries(string $queue, string $tier, string $division): array
+    public function getAllLeagueEntries(string $queue, string $tier, string $division): LeagueCollection
     {
-        return $this->apiHandler->request(endpoint: "/lol/league/v4/entries/{$queue}/{$tier}/{$division}");
+        $response = $this->apiHandler->request(endpoint: "/lol/league/v4/entries/{$queue}/{$tier}/{$division}");
+
+        $leagueCollection = new LeagueCollection();
+
+        foreach ($response as $data){
+            $miniSiries = new MiniSiriesDto(
+                $data["miniSiries"]["losses"],
+                $data["miniSiries"]["progress"],
+                $data["miniSiries"]["target"],
+                $data["miniSiries"]["wins"],
+            );
+
+            $leagueCollection->add(new LeagueEntryDto(
+                $data["leagueId"],
+                $data["summonerId"],
+                $data["queueType"],
+                $data["tier"],
+                $data["rank"],
+                $data["leaguePoints"],
+                $data["wins"],
+                $data["losses"],
+                $data["hotStreak"],
+                $data["veteran"],
+                $data["freshBlood"],
+                $data["inactive"],
+                $miniSiries,
+            ));
+        }
+        return $leagueCollection;
     }
-    public function getGrandmasterLeagueByQueue(string $queue): array
+    public function getGrandmasterLeagueByQueue(string $queue): LeagueListDto
     {
-        return $this->apiHandler->request(endpoint: "/lol/league/v4/grandmasterleagues/by-queue/{$queue}");
+        $response = $this->apiHandler->request(endpoint: "/lol/league/v4/grandmasterleagues/by-queue/{$queue}");
+
+        $miniSiries = new MiniSiriesDto(
+            $response["entries"]["miniSiries"]["losses"],
+            $response["entries"]["miniSiries"]["progress"],
+            $response["entries"]["miniSiries"]["target"],
+            $response["entries"]["miniSiries"]["wins"]
+        );
+
+        $entries = new LeagueItemDTO(
+            $response["entries"]["freshBlood"],
+            $response["entries"]["wins"],
+            $miniSiries,
+            $response["entries"]["inactive"],
+            $response["entries"]["veteran"],
+            $response["entries"]["hotStreak"],
+            $response["entries"]["rank"],
+            $response["entries"]["leaguePoints"],
+            $response["entries"]["losses"],
+            $response["entries"]["summonerId"],
+        );
+
+        return new LeagueListDto(
+            $response["leagueId"],
+            $entries,
+            $response["tier"],
+            $response["name"],
+            $response["queue"],
+        );
     }
-    public function getLeagueById(string $leagueId): array
+    public function getLeagueById(string $leagueId): LeagueListDto
     {
-        return $this->apiHandler->request(endpoint: "/lol/league/v4/leagues/{$leagueId}");
+        $response = $this->apiHandler->request(endpoint: "/lol/league/v4/leagues/{$leagueId}");
+        $miniSiries = new MiniSiriesDto(
+            $response["entries"]["miniSiries"]["losses"],
+            $response["entries"]["miniSiries"]["progress"],
+            $response["entries"]["miniSiries"]["target"],
+            $response["entries"]["miniSiries"]["wins"]
+        );
+
+        $entries = new LeagueItemDTO(
+            $response["entries"]["freshBlood"],
+            $response["entries"]["wins"],
+            $miniSiries,
+            $response["entries"]["inactive"],
+            $response["entries"]["veteran"],
+            $response["entries"]["hotStreak"],
+            $response["entries"]["rank"],
+            $response["entries"]["leaguePoints"],
+            $response["entries"]["losses"],
+            $response["entries"]["summonerId"],
+        );
+
+        return new LeagueListDto(
+            $response["leagueId"],
+            $entries,
+            $response["tier"],
+            $response["name"],
+            $response["queue"],
+        );
     }
-    public function getMasterLeagueByQueue(string $queue): array
+    public function getMasterLeagueByQueue(string $queue): LeagueListDto
     {
-        return $this->apiHandler->request(endpoint: "/lol/league/v4/masterleagues/by-queue/{$queue}");
+        $response = $this->apiHandler->request(endpoint: "/lol/league/v4/masterleagues/by-queue/{$queue}");
+        $miniSiries = new MiniSiriesDto(
+            $response["entries"]["miniSiries"]["losses"],
+            $response["entries"]["miniSiries"]["progress"],
+            $response["entries"]["miniSiries"]["target"],
+            $response["entries"]["miniSiries"]["wins"]
+        );
+
+        $entries = new LeagueItemDTO(
+            $response["entries"]["freshBlood"],
+            $response["entries"]["wins"],
+            $miniSiries,
+            $response["entries"]["inactive"],
+            $response["entries"]["veteran"],
+            $response["entries"]["hotStreak"],
+            $response["entries"]["rank"],
+            $response["entries"]["leaguePoints"],
+            $response["entries"]["losses"],
+            $response["entries"]["summonerId"],
+        );
+
+        return new LeagueListDto(
+            $response["leagueId"],
+            $entries,
+            $response["tier"],
+            $response["name"],
+            $response["queue"],
+        );
     }
 }

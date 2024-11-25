@@ -1,12 +1,15 @@
 <?php
 namespace App\Endpoints\LOL\League;
 
+use App\Endpoints\LOL\League\Collections\LeagueCollection;
+use App\Endpoints\LOL\League\DTO\LeagueListDto;
+
 interface LeagueEndpointInterface
 {
-    public function getChallengerLeagueByQueue(string $queue): array;
-    public function getLeagueEntriesByEncryptedSummonerId(string $encryptedSummonerId): array;
-    public function getAllLeagueEntries(string $queue, string $tier, string $division): array;
-    public function getGrandmasterLeagueByQueue(string $queue): array;
-    public function getLeagueById(string $leagueId): array;
-    public function getMasterLeagueByQueue(string $queue): array;
+    public function getChallengerLeagueByQueue(string $queue): LeagueListDto;
+    public function getLeagueEntriesByEncryptedSummonerId(string $encryptedSummonerId): LeagueCollection;
+    public function getAllLeagueEntries(string $queue, string $tier, string $division): LeagueCollection;
+    public function getGrandmasterLeagueByQueue(string $queue): LeagueListDto;
+    public function getLeagueById(string $leagueId): LeagueListDto;
+    public function getMasterLeagueByQueue(string $queue): LeagueListDto;
 }
