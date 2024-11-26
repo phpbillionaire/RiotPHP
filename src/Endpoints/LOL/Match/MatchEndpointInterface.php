@@ -1,8 +1,10 @@
 <?php
 namespace App\Endpoints\LOL\Match;
+use App\Endpoints\LOL\Match\DTO\MatchDto;
+
 interface MatchEndpointInterface
 {
-    public function getMatchById(string $matchId): array;
     public function getMatchesByPuuid(string $puuid): array;
-    public function getMatchTimelineById(string $matchId): array;
+    public function getMatchById(string $matchId): MatchDto;
+    public function getMatchTimelineById(string $matchId): TimelineDto;
 }
