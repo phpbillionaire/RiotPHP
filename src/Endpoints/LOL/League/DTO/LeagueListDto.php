@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\League\DTO;
+namespace RiotGamesPHP\Endpoints\LOL\League\DTO;
 
 final readonly class LeagueListDto
 {

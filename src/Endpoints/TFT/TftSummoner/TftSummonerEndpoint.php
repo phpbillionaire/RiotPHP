@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\TFT\TftSummoner;
+namespace RiotGamesPHP\Endpoints\TFT\TftSummoner;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 class TftSummonerEndpoint implements TftSummonerEndpointInterface
 {

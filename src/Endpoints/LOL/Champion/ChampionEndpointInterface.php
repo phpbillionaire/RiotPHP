@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Endpoints\LOL\Champion;
+namespace RiotGamesPHP\Endpoints\LOL\Champion;
 
 interface ChampionEndpointInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Endpoints\LOR\LorMatch;
+namespace RiotGamesPHP\Endpoints\LOR\LorMatch;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 final class LorMatchEndpoint implements LorMatchEndpointInterface
 {

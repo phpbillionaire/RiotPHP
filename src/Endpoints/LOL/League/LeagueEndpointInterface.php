@@ -1,8 +1,8 @@
 <?php
-namespace App\Endpoints\LOL\League;
+namespace RiotGamesPHP\Endpoints\LOL\League;
 
-use App\Endpoints\LOL\League\Collections\LeagueCollection;
-use App\Endpoints\LOL\League\DTO\LeagueListDto;
+use RiotGamesPHP\Endpoints\LOL\League\Collections\LeagueCollection;
+use RiotGamesPHP\Endpoints\LOL\League\DTO\LeagueListDto;
 
 interface LeagueEndpointInterface
 {

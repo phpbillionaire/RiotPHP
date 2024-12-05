@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\ChampionMastery\DTO;
+namespace RiotGamesPHP\Endpoints\LOL\ChampionMastery\DTO;
 
 final readonly class ChampionMasteryDto
 {

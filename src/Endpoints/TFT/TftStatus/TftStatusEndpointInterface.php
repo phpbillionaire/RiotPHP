@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\TFT\TftStatus;
+namespace RiotGamesPHP\Endpoints\TFT\TftStatus;
 
 interface TftStatusEndpointInterface
 {

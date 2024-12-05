@@ -2,13 +2,13 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 
 // Api Handler that will handle the data from requests
-use App\Api\ApiHandler;
+use RiotGamesPHP\Api\ApiHandler;
 // This is config which will be responsible for your desired Region/Route
-use App\Config\Config;
+use RiotGamesPHP\Config\Config;
 // HTTP Client by Guzzle that will process requests to endpoints
 use GuzzleHttp\Client;
 // Here's our first endpoint (https://developer.riotgames.com/apis#account-v1)
-use App\Endpoints\Account\AccountEndpoint;
+use RiotGamesPHP\Endpoints\Account\AccountEndpoint;
 
 // Initializing HTTP Client, project is based on Dependency Injection.
 $http = new Client();

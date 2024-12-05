@@ -1,6 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\LolRsoMatch;
-use App\Api\ApiHandlerInterface;
+namespace RiotGamesPHP\Endpoints\LOL\LolRsoMatch;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 class LolRsoMatchEndpoint implements LolRsoMatchEndpointInterface
 {

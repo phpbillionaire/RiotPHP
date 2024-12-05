@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\TFT\TftSummoner;
+namespace RiotGamesPHP\Endpoints\TFT\TftSummoner;
 
 interface TftSummonerEndpointInterface
 {

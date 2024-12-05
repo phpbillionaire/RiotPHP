@@ -1,10 +1,8 @@
 <?php
-namespace App\Endpoints\LOL\LolChallenges;
-use App\Api\ApiHandlerInterface;
-use App\Endpoints\LOL\LolChallenges\Collections\LolChallengesCollection;
-use App\Endpoints\LOL\LolChallenges\DTO\ApexPlayerInfoDto;
-use App\Endpoints\LOL\LolChallenges\DTO\ChallengeConfigInfoDto;
-use App\Endpoints\LOL\LolChallenges\DTO\PlayerInfoDto;
+namespace RiotGamesPHP\Endpoints\LOL\LolChallenges;
+use RiotGamesPHP\Api\ApiHandlerInterface;
+use RiotGamesPHP\Endpoints\LOL\LolChallenges\Collections\LolChallengesCollection;
+use RiotGamesPHP\Endpoints\LOL\LolChallenges\DTO\{ApexPlayerInfoDto, ChallengeConfigInfoDto, PlayerInfoDto};
 
 final class LolChallengesEndpoint implements LolChallengesEndpointInterface
 {

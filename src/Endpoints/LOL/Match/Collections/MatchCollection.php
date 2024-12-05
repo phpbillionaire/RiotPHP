@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\LOL\Match\Collections;
+namespace RiotGamesPHP\Endpoints\LOL\Match\Collections;
 
-use App\Collections\BaseCollectionInterface;
+use RiotGamesPHP\Collections\BaseCollectionInterface;
 
 class MatchCollection implements BaseCollectionInterface, \Countable, \IteratorAggregate
 {

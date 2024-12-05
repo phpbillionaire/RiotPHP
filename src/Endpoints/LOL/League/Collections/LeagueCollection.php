@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\LOL\League\Collections;
+namespace RiotGamesPHP\Endpoints\LOL\League\Collections;
 
-use App\Collections\BaseCollectionInterface;
+use RiotGamesPHP\Collections\BaseCollectionInterface;
 
 class LeagueCollection implements BaseCollectionInterface, \Countable, \IteratorAggregate
 {

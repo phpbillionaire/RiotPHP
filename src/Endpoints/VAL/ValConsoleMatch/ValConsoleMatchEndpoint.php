@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\VAL\ValConsoleMatch;
+namespace RiotGamesPHP\Endpoints\VAL\ValConsoleMatch;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 class ValConsoleMatchEndpoint implements ValConsoleMatchEndpointInterface
 {

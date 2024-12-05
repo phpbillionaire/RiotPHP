@@ -1,6 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\Champion;
-use App\Api\{ApiHandlerInterface};
+namespace RiotGamesPHP\Endpoints\LOL\Champion;
+use RiotGamesPHP\Api\{ApiHandlerInterface};
 
 final class ChampionEndpoint implements ChampionEndpointInterface
 {

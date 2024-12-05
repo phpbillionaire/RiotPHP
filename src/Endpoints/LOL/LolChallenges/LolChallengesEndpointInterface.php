@@ -1,9 +1,8 @@
 <?php
-namespace App\Endpoints\LOL\LolChallenges;
+namespace RiotGamesPHP\Endpoints\LOL\LolChallenges;
 
-use App\Endpoints\LOL\LolChallenges\Collections\LolChallengesCollection;
-use App\Endpoints\LOL\LolChallenges\DTO\ChallengeConfigInfoDto;
-use App\Endpoints\LOL\LolChallenges\DTO\PlayerInfoDto;
+use RiotGamesPHP\Endpoints\LOL\LolChallenges\Collections\LolChallengesCollection;
+use RiotGamesPHP\Endpoints\LOL\LolChallenges\DTO\{ChallengeConfigInfoDto, PlayerInfoDto};
 
 interface LolChallengesEndpointInterface
 {

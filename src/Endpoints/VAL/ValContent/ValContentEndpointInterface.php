@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\VAL\ValContent;
+namespace RiotGamesPHP\Endpoints\VAL\ValContent;
 
 interface ValContentEndpointInterface
 {

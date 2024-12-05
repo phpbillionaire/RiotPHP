@@ -1,7 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\Clash\Collections;
-use App\Collections\BaseCollectionInterface;
-use App\Endpoints\LOL\Clash\DTO\PlayerDto;
+namespace RiotGamesPHP\Endpoints\LOL\Clash\Collections;
+use RiotGamesPHP\Collections\BaseCollectionInterface;
 final class ClashCollection implements BaseCollectionInterface, \Countable, \IteratorAggregate
 {
     private array $items = [];

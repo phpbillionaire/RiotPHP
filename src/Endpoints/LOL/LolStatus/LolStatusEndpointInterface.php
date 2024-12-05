@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\LolStatus;
+namespace RiotGamesPHP\Endpoints\LOL\LolStatus;
 interface LolStatusEndpointInterface
 {
     public function getPlatformStatus(): array;

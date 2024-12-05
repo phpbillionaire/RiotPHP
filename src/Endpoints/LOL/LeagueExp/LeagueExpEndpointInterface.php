@@ -1,6 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\LeagueExp;
-use App\Endpoints\LOL\LeagueExp\Collections\LeagueEntryCollection;
+namespace RiotGamesPHP\Endpoints\LOL\LeagueExp;
+use RiotGamesPHP\Endpoints\LOL\LeagueExp\Collections\LeagueEntryCollection;
 
 interface LeagueExpEndpointInterface
 {

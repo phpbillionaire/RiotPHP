@@ -1,6 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\LolChallenges\Collections;
-use App\Collections\BaseCollectionInterface;
+namespace RiotGamesPHP\Endpoints\LOL\LolChallenges\Collections;
+use RiotGamesPHP\Collections\BaseCollectionInterface;
 
 class LolChallengesCollection implements BaseCollectionInterface, \Countable, \IteratorAggregate
 {

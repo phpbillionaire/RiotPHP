@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Endpoints\LOR\LorMatch;
+namespace RiotGamesPHP\Endpoints\LOR\LorMatch;
 
 interface LorMatchEndpointInterface
 {

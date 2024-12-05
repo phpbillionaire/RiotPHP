@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\TFT\SpectatorTft;
+namespace RiotGamesPHP\Endpoints\TFT\SpectatorTft;
 
 interface SpectatorTftEndpointInterface
 {

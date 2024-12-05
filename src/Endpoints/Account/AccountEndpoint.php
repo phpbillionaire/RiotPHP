@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\Account;
-use App\Api\{ApiHandlerInterface};
-use App\Endpoints\Account\DTO\AccountDto;
+namespace RiotGamesPHP\Endpoints\Account;
+use RiotGamesPHP\Api\{ApiHandlerInterface};
+use RiotGamesPHP\Endpoints\Account\DTO\AccountDto;
 
 final class AccountEndpoint implements AccountEndpointInterface
 {

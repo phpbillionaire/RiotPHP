@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\VAL\ValConsoleRanked;
+namespace RiotGamesPHP\Endpoints\VAL\ValConsoleRanked;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 class ValConsoleRankedEndpoint implements ValConsoleRankedEndpointInterface
 {

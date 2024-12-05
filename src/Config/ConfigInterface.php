@@ -1,5 +1,5 @@
 <?php
-namespace App\Config;
+namespace RiotGamesPHP\Config;
 
 /**
  * Interface for configuration settings.

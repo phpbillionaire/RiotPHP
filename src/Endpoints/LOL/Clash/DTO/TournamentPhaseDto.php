@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\Clash\DTO;
+namespace RiotGamesPHP\Endpoints\LOL\Clash\DTO;
 
 final readonly class TournamentPhaseDto
 {

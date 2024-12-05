@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\VAL\ValContent;
+namespace RiotGamesPHP\Endpoints\VAL\ValContent;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 final class ValContentEndpoint implements ValContentEndpointInterface
 {

@@ -1,7 +1,7 @@
 <?php
-namespace App\Api;
+namespace RiotGamesPHP\Api;
 
-use App\Config\ConfigInterface;
+use RiotGamesPHP\Config\ConfigInterface;
 use GuzzleHttp\{Client, ClientInterface};
 
 /**

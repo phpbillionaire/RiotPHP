@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\Match\DTO;
+namespace RiotGamesPHP\Endpoints\LOL\Match\DTO;
 
 final readonly class ParticipantDto
 {

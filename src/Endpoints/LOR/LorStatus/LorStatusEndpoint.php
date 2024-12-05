@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\LOR\LorStatus;
+namespace RiotGamesPHP\Endpoints\LOR\LorStatus;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 final class LorStatusEndpoint implements LorStatusEndpointInterface
 {

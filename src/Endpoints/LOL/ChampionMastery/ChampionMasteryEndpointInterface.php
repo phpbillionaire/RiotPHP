@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\LOL\ChampionMastery;
-use App\Endpoints\LOL\ChampionMastery\Collections\ChampionMasteryCollection;
-use App\Endpoints\LOL\ChampionMastery\DTO\ChampionMasteryDto;
+namespace RiotGamesPHP\Endpoints\LOL\ChampionMastery;
+use RiotGamesPHP\Endpoints\LOL\ChampionMastery\Collections\ChampionMasteryCollection;
+use RiotGamesPHP\Endpoints\LOL\ChampionMastery\DTO\ChampionMasteryDto;
 
 interface ChampionMasteryEndpointInterface
 {

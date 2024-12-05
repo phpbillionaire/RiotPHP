@@ -1,6 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\Summoner;
-use App\Api\ApiHandlerInterface;
+namespace RiotGamesPHP\Endpoints\LOL\Summoner;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 final class SummonerEndpoint implements SummonerEndpointInterface
 {

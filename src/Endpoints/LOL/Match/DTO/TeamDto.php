@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\LOL\Match\DTO;
+namespace RiotGamesPHP\Endpoints\LOL\Match\DTO;
 
-use App\Endpoints\LOL\Match\Collections\MatchCollection;
+use RiotGamesPHP\Endpoints\LOL\Match\Collections\MatchCollection;
 
 final readonly class TeamDto
 {

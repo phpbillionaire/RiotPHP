@@ -1,7 +1,5 @@
 <?php
-namespace App\Collections;
-use App\Endpoints\LOL\ChampionMastery\DTO\ChampionMasteryDto;
-
+namespace RiotGamesPHP\Collections;
 interface BaseCollectionInterface
 {
     public function add($dto): void;

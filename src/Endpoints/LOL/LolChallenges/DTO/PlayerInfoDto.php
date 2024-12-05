@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\LolChallenges\DTO;
+namespace RiotGamesPHP\Endpoints\LOL\LolChallenges\DTO;
 final readonly class PlayerInfoDto
 {
     private array $challenges;

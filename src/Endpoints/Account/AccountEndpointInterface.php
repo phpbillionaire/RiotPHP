@@ -1,6 +1,6 @@
 <?php
-namespace App\Endpoints\Account;
-use App\Endpoints\Account\DTO\AccountDto;
+namespace RiotGamesPHP\Endpoints\Account;
+use RiotGamesPHP\Endpoints\Account\DTO\AccountDto;
 
 interface AccountEndpointInterface
 {

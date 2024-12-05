@@ -1,8 +1,8 @@
 <?php
-namespace App\Endpoints\LOL\ChampionMastery;
-use App\Api\{ApiHandlerInterface};
-use App\Endpoints\LOL\ChampionMastery\DTO\{ChampionMasteryDto, NextSeasonMilestonesDto, RewardConfigDto};
-use App\Endpoints\LOL\ChampionMastery\Collections\ChampionMasteryCollection;
+namespace RiotGamesPHP\Endpoints\LOL\ChampionMastery;
+use RiotGamesPHP\Api\{ApiHandlerInterface};
+use RiotGamesPHP\Endpoints\LOL\ChampionMastery\DTO\{ChampionMasteryDto, NextSeasonMilestonesDto, RewardConfigDto};
+use RiotGamesPHP\Endpoints\LOL\ChampionMastery\Collections\ChampionMasteryCollection;
 final class ChampionMasteryEndpoint implements ChampionMasteryEndpointInterface
 {
     private ApiHandlerInterface $apiHandler;

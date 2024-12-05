@@ -1,10 +1,8 @@
 <?php
-namespace App\Endpoints\LOL\ChampionMastery\Collections;
-use App\Collections\BaseCollectionInterface;
-use App\Endpoints\LOL\ChampionMastery\DTO\ChampionMasteryDto;
+namespace RiotGamesPHP\Endpoints\LOL\ChampionMastery\Collections;
+use RiotGamesPHP\Collections\BaseCollectionInterface;
 use Countable;
 use IteratorAggregate;
-use Traversable;
 
 class ChampionMasteryCollection implements BaseCollectionInterface, Countable, IteratorAggregate
 {

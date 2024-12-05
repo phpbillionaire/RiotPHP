@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\TFT\TftLeague;
+namespace RiotGamesPHP\Endpoints\TFT\TftLeague;
 interface TftLeagueEndpointInterface
 {
     public function getChallengerLeague(): array;

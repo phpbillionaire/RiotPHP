@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\LOL\League\DTO;
+namespace RiotGamesPHP\Endpoints\LOL\League\DTO;
 
-use App\Endpoints\LOL\LeagueExp\DTO\MiniSiriesDto;
+use RiotGamesPHP\Endpoints\LOL\LeagueExp\DTO\MiniSiriesDto;
 
 final readonly class LeagueItemDTO
 {

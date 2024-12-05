@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\LeagueExp\DTO;
+namespace RiotGamesPHP\Endpoints\LOL\LeagueExp\DTO;
 final readonly class MiniSiriesDto
 {
     private int $losses;

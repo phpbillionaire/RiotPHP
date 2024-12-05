@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\TFT\TftStatus;
+namespace RiotGamesPHP\Endpoints\TFT\TftStatus;
 
-use App\Api\ApiHandler;
+use RiotGamesPHP\Api\ApiHandler;
 
 class TftStatusEndpoint implements TftStatusEndpointInterface
 {

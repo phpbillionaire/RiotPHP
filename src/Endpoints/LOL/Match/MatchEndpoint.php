@@ -1,11 +1,8 @@
 <?php
-namespace App\Endpoints\LOL\Match;
-use App\Api\ApiHandlerInterface;
-use App\Endpoints\LOL\Match\Collections\MatchCollection;
-use App\Endpoints\LOL\Match\DTO\ChallengesDto;
-use App\Endpoints\LOL\Match\DTO\InfoDto;
-use App\Endpoints\LOL\Match\DTO\MatchDto;
-use App\Endpoints\LOL\Match\DTO\ParticipantDto;
+namespace RiotGamesPHP\Endpoints\LOL\Match;
+use RiotGamesPHP\Api\ApiHandlerInterface;
+use RiotGamesPHP\Endpoints\LOL\Match\Collections\MatchCollection;
+use RiotGamesPHP\Endpoints\LOL\Match\DTO\{ChallengesDto, InfoDto, MatchDto, ParticipantDto};
 
 final class MatchEndpoint implements MatchEndpointInterface
 {

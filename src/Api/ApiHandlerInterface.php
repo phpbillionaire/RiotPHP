@@ -1,5 +1,5 @@
 <?php
-namespace App\Api;
+namespace RiotGamesPHP\Api;
 
 /**
  * Interface for handling API requests.

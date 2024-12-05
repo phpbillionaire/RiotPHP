@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\LOL\Clash;
-use App\Endpoints\LOL\Clash\Collections\ClashCollection;
-use App\Endpoints\LOL\Clash\DTO\TournamentDto;
+namespace RiotGamesPHP\Endpoints\LOL\Clash;
+use RiotGamesPHP\Endpoints\LOL\Clash\Collections\ClashCollection;
+use RiotGamesPHP\Endpoints\LOL\Clash\DTO\TournamentDto;
 
 interface ClashEndpointInterface
 {

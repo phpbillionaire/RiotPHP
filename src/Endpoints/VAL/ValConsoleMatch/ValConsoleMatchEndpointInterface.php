@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\VAL\ValConsoleMatch;
+namespace RiotGamesPHP\Endpoints\VAL\ValConsoleMatch;
 
 interface ValConsoleMatchEndpointInterface
 {

@@ -1,6 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\Match;
-use App\Endpoints\LOL\Match\DTO\MatchDto;
+namespace RiotGamesPHP\Endpoints\LOL\Match;
+use RiotGamesPHP\Endpoints\LOL\Match\DTO\MatchDto;
 
 interface MatchEndpointInterface
 {

@@ -1,8 +1,8 @@
 <?php
-namespace App\Endpoints\LOL\LeagueExp;
-use App\Api\ApiHandlerInterface;
-use App\Endpoints\LOL\LeagueExp\Collections\LeagueEntryCollection;
-use App\Endpoints\LOL\LeagueExp\DTO\{LeagueEntryDto, MiniSiriesDto};
+namespace RiotGamesPHP\Endpoints\LOL\LeagueExp;
+use RiotGamesPHP\Api\ApiHandlerInterface;
+use RiotGamesPHP\Endpoints\LOL\LeagueExp\Collections\LeagueEntryCollection;
+use RiotGamesPHP\Endpoints\LOL\LeagueExp\DTO\{LeagueEntryDto, MiniSiriesDto};
 
 final class LeagueExpEndpoint implements LeagueExpEndpointInterface
 {

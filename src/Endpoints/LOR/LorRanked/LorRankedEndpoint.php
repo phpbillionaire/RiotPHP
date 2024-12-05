@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\LOR\LorRanked;
+namespace RiotGamesPHP\Endpoints\LOR\LorRanked;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 final class LorRankedEndpoint implements LorRankedEndpointInterface
 {

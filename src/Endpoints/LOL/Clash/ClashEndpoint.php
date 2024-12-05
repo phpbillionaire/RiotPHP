@@ -1,8 +1,8 @@
 <?php
-namespace App\Endpoints\LOL\Clash;
-use App\Api\{ApiHandlerInterface};
-use App\Endpoints\LOL\Clash\Collections\ClashCollection;
-use App\Endpoints\LOL\Clash\DTO\{PlayerDto, TournamentPhaseDto, TeamDto, TournamentDto};
+namespace RiotGamesPHP\Endpoints\LOL\Clash;
+use RiotGamesPHP\Api\{ApiHandlerInterface};
+use RiotGamesPHP\Endpoints\LOL\Clash\Collections\ClashCollection;
+use RiotGamesPHP\Endpoints\LOL\Clash\DTO\{PlayerDto, TournamentPhaseDto, TeamDto, TournamentDto};
 
 final class ClashEndpoint implements ClashEndpointInterface
 {

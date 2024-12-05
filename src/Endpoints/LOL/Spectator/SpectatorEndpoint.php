@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\LOL\Spectator;
+namespace RiotGamesPHP\Endpoints\LOL\Spectator;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 final class SpectatorEndpoint implements SpectatorEndpointInterface
 {

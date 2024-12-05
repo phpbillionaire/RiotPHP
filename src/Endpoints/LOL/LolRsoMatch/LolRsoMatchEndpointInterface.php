@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\LolRsoMatch;
+namespace RiotGamesPHP\Endpoints\LOL\LolRsoMatch;
 
 interface LolRsoMatchEndpointInterface
 {

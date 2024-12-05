@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOL\Spectator;
+namespace RiotGamesPHP\Endpoints\LOL\Spectator;
 
 interface SpectatorEndpointInterface
 {

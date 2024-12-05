@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\TFT\SpectatorTft;
+namespace RiotGamesPHP\Endpoints\TFT\SpectatorTft;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 final class SpectatorTftEndpoint implements SpectatorTftEndpointInterface
 {

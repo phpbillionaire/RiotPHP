@@ -1,7 +1,7 @@
 <?php
-namespace App\Endpoints\TFT\TftMatch;
+namespace RiotGamesPHP\Endpoints\TFT\TftMatch;
 
-use App\Api\ApiHandlerInterface;
+use RiotGamesPHP\Api\ApiHandlerInterface;
 
 class TftMatchEndpoint implements TftMatchEndpointInterface
 {

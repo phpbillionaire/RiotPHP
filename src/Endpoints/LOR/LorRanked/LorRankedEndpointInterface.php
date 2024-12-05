@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\LOR\LorRanked;
+namespace RiotGamesPHP\Endpoints\LOR\LorRanked;
 
 interface LorRankedEndpointInterface
 {

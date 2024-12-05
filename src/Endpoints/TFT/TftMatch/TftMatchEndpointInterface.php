@@ -1,5 +1,5 @@
 <?php
-namespace App\Endpoints\TFT\TftMatch;
+namespace RiotGamesPHP\Endpoints\TFT\TftMatch;
 
 interface TftMatchEndpointInterface
 {

@@ -1,6 +1,6 @@
 <?php
-namespace App\Endpoints\LOL\Match\DTO;
-use App\Endpoints\LOL\Match\Collections\MatchCollection;
+namespace RiotGamesPHP\Endpoints\LOL\Match\DTO;
+use RiotGamesPHP\Endpoints\LOL\Match\Collections\MatchCollection;
 
 final readonly class PerksDto
 {
