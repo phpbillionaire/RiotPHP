@@ -10,20 +10,27 @@ Note: Application's entry point is **src/index.php**
 
 ## Usage
 
-### 1. Add your API key to .env
-
-```dotenv
-API_KEY=XXXX-XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX
-```
-
-### 2. Clone & Initialize the project
+### 1. Clone & Initialize the project
 ```
 git clone https://github.com/phpbillionaire/RiotGamesPHP.git
 ```
 ```
 composer install
 ```
+or
+
+```
+composer require phpbillionaire/riotgamesphp
+```
+
 Now you're good to go!
+
+### 2. Add your API key to .env
+
+```dotenv
+API_KEY=XXXX-XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX
+```
+
 ### 3. Make first endpoint call (src/index.php)
 Since most Riot endpoints rely on user's PUUID, we'll get it first!
 ```php
