@@ -3,6 +3,10 @@
     "description": "Riot Games Api PHP Wrapper",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "riotgames", "leagueoflegends", "valorant", "teamfighttactics",
+        "legendsofruneterra", "lol", "tft", "lor", "val", "php", "api"
+    ],
     "autoload": {
         "psr-4": {
             "RiotGamesPHP\\": "src/"
