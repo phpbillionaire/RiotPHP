@@ -1,5 +1,5 @@
-# RiotGamesPHP
-This is API Wrapper that is based on PHP 8.3.3 for https://developer.riotgames.com/apis
+# Riot Games SDK
+SDK that is based on PHP 8.3.3 for https://developer.riotgames.com/apis
 
 ##### Important! Steps to do before initializing:
 
