@@ -1,6 +1,6 @@
 {
-    "name": "phpbillionaire/riotgamesphp",
-    "description": "Riot Games Api PHP Wrapper",
+    "name": "phpbillionaire/riot-games-sdk",
+    "description": "Riot Games SDK",
     "type": "library",
     "license": "MIT",
     "keywords": [
@@ -9,7 +9,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "RiotGamesPHP\\": "src/"
+            "RGSDK\\": "src/"
         }
     },
     "authors": [
@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.4",
         "guzzlehttp/guzzle": "^7.9",
         "vlucas/phpdotenv": "^5.6"
     }
